@@ -21,13 +21,15 @@ tasks.withType<JavaCompile> {
 
 
 dependencies {
+
 //	val tomcatVersion = "11.0.0-M24" // slow
-	val tomcatVersion = "11.0.0-M22" // slow
-//	val tomcatVersion = "11.0.0-M21" // fast
+//	val tomcatVersion = "11.0.0-M22" // slow
+	val tomcatVersion = "11.0.0-M21" // fast
 //	val tomcatVersion = "11.0.0-M20" // fast
 //	val tomcatVersion = "10.1.25" // slow
 //	val tomcatVersion = "10.1.24" // fast
 //	val tomcatVersion = "10.1.19" // fast
+
 	implementation("org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion")
 	implementation("org.apache.tomcat.embed:tomcat-embed-websocket:$tomcatVersion")
 	implementation("org.apache.tomcat:tomcat-jasper:$tomcatVersion")

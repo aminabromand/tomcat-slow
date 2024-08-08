@@ -9,6 +9,7 @@ import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Server;
 import org.glassfish.jersey.client.JerseyClient;
 import org.glassfish.jersey.client.JerseyClientBuilder;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class TomcatUtilTest {
+
+  static long startTime = System.currentTimeMillis();
 
   TomcatUtil tomcatUtil = new TomcatUtil();
   int port;
@@ -41,6 +44,11 @@ public class TomcatUtilTest {
   public void tearDown() throws Exception {
     tomcatUtil.stop();
     System.out.println("############# tearDown");
+  }
+
+  @AfterAll
+  public static void afterAll() {
+    System.out.println("############# afterAll: " + (System.currentTimeMillis() - startTime));
   }
 
   @Test
